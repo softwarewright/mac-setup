@@ -6,7 +6,7 @@ brew update
 brew install watchman zsh git nvm awscli terraform jq kubectl
 nvm install node && nvm use default
 
-npm install -g typescript
+npm install -g typescript ts-node
 
 sudo sh -c "echo $(which zsh) >> /etc/shells" && chsh -s $(which zsh)
 
