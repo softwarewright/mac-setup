@@ -8,12 +8,16 @@ brew install watchman zsh git nvm awscli terraform jq kubectl
 sudo chmod -R 755 zsh
 for f in $(compaudit);do sudo chown $(whoami):admin $f;done;
 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 mkdir ~/.nvm
 
-echo 'ZSH_THEME=agnoster
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion' >> ~/.zshrc
+sed -i '' 's/ZSH_THEME=.*/ZSH_THEME=agnoster/g' ~/.zshrc
+
+echo '\n\nprompt_context(){}
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion' >> ~/.zshrc
 
 nvm install node && nvm use default
 
