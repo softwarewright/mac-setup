@@ -34,7 +34,6 @@ spectacle \
 google-chrome \
 firefox \
 microsoft-edge \
-iterm2 \
 visual-studio-code \
 postman \
 slack \
